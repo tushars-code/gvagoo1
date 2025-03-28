@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gvagoo1/Onboarding/onboarding_items.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../wrapper.dart';
 
 class OnboardingView extends StatefulWidget {
@@ -157,13 +156,11 @@ class _OnboardingViewState extends State<OnboardingView> {
           final prefs = await SharedPreferences.getInstance();
           await prefs.setBool("onboarding", true);
 
-          // ✅ Navigate to Wrapper after onboarding
+          // ✅ Navigate to WelcomeScreen after onboarding
           if (!mounted) return;
-          Navigator.pushReplacement(
+          Navigator.pushReplacementNamed(
             context,
-            MaterialPageRoute(
-              builder: (context) => const Wrapper(),
-            ),
+            '/welcome', // 👈 Navigate to WelcomeScreen
           );
         },
         child: const Text(
@@ -173,4 +170,5 @@ class _OnboardingViewState extends State<OnboardingView> {
       ),
     );
   }
+
 }

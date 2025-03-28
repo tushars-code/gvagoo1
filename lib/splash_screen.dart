@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gvagoo1/home.dart';
 import 'package:gvagoo1/Onboarding/onboarding_view.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -41,25 +40,19 @@ class _SplashScreenState extends State<SplashScreen>
     _controller.forward(); // Start animation
   }
 
-  // ✅ Check onboarding status and navigate
+  // ✅ Navigate to OnboardingView after delay
   Future<void> _navigateAfterDelay() async {
     await Future.delayed(const Duration(seconds: 2)); // Wait for splash animation
 
-    final bool showHome = await _checkOnboardingStatus();
     if (!mounted) return;
 
+    // ✅ Always navigate to OnboardingView
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => showHome ? const Home() : const OnboardingView(),
+        builder: (context) => const OnboardingView(),
       ),
     );
-  }
-
-  // ✅ Check if onboarding is completed
-  Future<bool> _checkOnboardingStatus() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getBool("onboarding") ?? false;
   }
 
   @override

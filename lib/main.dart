@@ -4,6 +4,7 @@ import 'package:gvagoo1/home.dart';
 import 'package:gvagoo1/splash_screen.dart';
 import 'package:gvagoo1/Onboarding/onboarding_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'get_started.dart';
 import 'login.dart';
 
 void main() async {
@@ -11,6 +12,7 @@ void main() async {
   await Firebase.initializeApp(); // ✅ Initialize Firebase
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -21,16 +23,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Gvagoo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      // ✅ SplashScreen decides the initial route based on onboarding status
+
       home: const SplashScreen(),
       routes: {
-        '/login': (context) => const Login(),
+        '/login': (context) => const Login(), // ✅ Correct
+        '/home': (context) => const Home(),   // ✅ Correct
+
         '/onboarding': (context) => const OnboardingView(),
-        '/home': (context) => const Home(),
+        '/welcome': (context) => const WelcomeScreen(),
       },
     );
   }
 }
+
