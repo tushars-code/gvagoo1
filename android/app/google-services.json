@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "794902845218",
+    "project_id": "gvagoo",
+    "storage_bucket": "gvagoo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794902845218:android:bd6ac677328a5b700b377b",
+        "android_client_info": {
+          "package_name": "com.example.gvagoo1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe8XFtZ70lXGahiozCw0KrcW8Bd9czPg4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

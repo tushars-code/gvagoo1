@@ -1,0 +1,48 @@
+name: gvagoo1
+description: "A new Flutter project."
+publish_to: 'none' # Prevent accidental publishing
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Required dependencies
+  cupertino_icons: ^1.0.8
+  smooth_page_indicator: ^1.2.1
+  shared_preferences: ^2.2.2
+  animated_splash_screen: ^1.3.0
+  page_transition: ^2.2.1
+  google_fonts: ^6.2.1
+  flutter_launcher_icons: ^0.14.3
+  firebase_core: ^3.12.1
+  firebase_auth: ^5.5.1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon.png"
+  adaptive_icon_background: "#2F80ED"
+  adaptive_icon_foreground: "assets/icon.png"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/chatbot.gif
+    - assets/Exploring.gif
+    - assets/Journey.gif
+    - assets/Superhero.gif
+    - assets/travel.gif
+    - assets/google-logo.png
+    - assets/bg_image.png
