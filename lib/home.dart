@@ -12,11 +12,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final user = FirebaseAuth.instance.currentUser;
 
-  // ✅ Original Sign Out Logic (Reverted to pushReplacementNamed)
+  // ✅ Sign Out Logic
   Future<void> signOut() async {
     await FirebaseAuth.instance.signOut();
     if (mounted) {
-      // Navigate strictly back to login screen
       Navigator.of(context).pushReplacementNamed('/login');
     }
   }
@@ -24,7 +23,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ✅ Modern AppBar Design
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         title: Text(
@@ -40,7 +38,7 @@ class _HomeState extends State<Home> {
         ],
       ),
 
-      // ✅ Main Content Section
+      // ✅ Main Content
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -63,10 +61,10 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // ✅ Welcome Message
+                  // ✅ Welcome Message (Show Name or Email)
                   Text(
                     user != null
-                        ? 'Welcome, ${user!.email}' // Display user email
+                        ? 'Welcome, ${user!.displayName ?? user!.email}'  // ✅ Show Name if Available
                         : 'No user signed in!',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
@@ -77,7 +75,6 @@ class _HomeState extends State<Home> {
                   ),
                   const SizedBox(height: 16),
 
-                  // ✅ Subtitle
                   Text(
                     "You're successfully logged in!",
                     style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey),

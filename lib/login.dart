@@ -76,6 +76,8 @@ class _LoginState extends State<Login> {
               controller: email,
               hintText: "Enter email",
               icon: Icons.email_outlined,
+
+
             ),
             const SizedBox(height: 20),
             _buildInputField(
@@ -83,6 +85,7 @@ class _LoginState extends State<Login> {
               hintText: "Enter password",
               icon: Icons.lock_outline,
               obscureText: true,
+
             ),
             const SizedBox(height: 30),
             SizedBox(

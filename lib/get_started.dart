@@ -11,22 +11,25 @@ class WelcomeScreen extends StatelessWidget {
         children: [
           // ✅ Background Image
           Container(
+            margin: EdgeInsets.only(bottom: 614),
+
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/bg_image.png'), // Updated background image
-                fit: BoxFit.cover,
+                
               ),
             ),
           ),
 
           // ✅ Gradient Overlay
           Container(
+
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   Colors.white.withOpacity(0.9),
                   Colors.white.withOpacity(0.7),
-                  Colors.white.withOpacity(0.5),
+
                   Colors.transparent,
                 ],
                 begin: Alignment.bottomCenter,

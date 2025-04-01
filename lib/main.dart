@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:gvagoo1/home.dart';
+import 'package:gvagoo1/signup.dart';
 import 'package:gvagoo1/splash_screen.dart';
 import 'package:gvagoo1/Onboarding/onboarding_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => const Login(), // ✅ Correct
         '/home': (context) => const Home(),   // ✅ Correct
-
+        '/signup': (context) => const SignUpScreen(),
         '/onboarding': (context) => const OnboardingView(),
         '/welcome': (context) => const WelcomeScreen(),
       },
